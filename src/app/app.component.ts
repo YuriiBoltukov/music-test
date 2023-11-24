@@ -26,4 +26,8 @@ const ELEMENT_DATA: Audio[] = [
 export class AppComponent {
   displayedColumns: string[] = ['demo-position', 'demo-name', 'demo-weight'];
   dataSource = ELEMENT_DATA;
+  openPlayer(audio: Audio) {
+    console.log(audio)
+  }
+
 }
