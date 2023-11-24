@@ -1,3 +1,5 @@
+<h1>Title</h1>
+
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- Position Column -->
   <ng-container matColumnDef="demo-position">
@@ -23,4 +25,6 @@
       (click)="openPlayer(row)"
       *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+<ng-template [ngIf]="audioSource()" let-source="ngIf">
+  <audio [src]="source" controls autoplay></audio>
+</ng-template>
