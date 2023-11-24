@@ -3,27 +3,27 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
   <!-- Position Column -->
   <ng-container matColumnDef="demo-position">
-    <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <th mat-header-cell *matHeaderCellDef>Id</th>
+    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="demo-name">
-    <th mat-header-cell *matHeaderCellDef> Наименование звука </th>
-    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    <th mat-header-cell *matHeaderCellDef>Наименование звука</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="demo-weight">
-    <th mat-header-cell *matHeaderCellDef> Имя файла звукозаписи </th>
-    <td mat-cell *matCellDef="let element"> {{element.fileName}} </td>
+    <th mat-header-cell *matHeaderCellDef>Имя файла звукозаписи</th>
+    <td mat-cell *matCellDef="let element">{{ element.fileName }}</td>
   </ng-container>
 
-
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row
-      (click)="openPlayer(row)"
-      *matRowDef="let row; columns: displayedColumns;"></tr>
+  <tr
+    mat-row
+    (click)="openPlayer(row)"
+    *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 <ng-template [ngIf]="audioSource()" let-source="ngIf">
   <audio [src]="source" controls autoplay></audio>
